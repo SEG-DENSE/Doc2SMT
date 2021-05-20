@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="containermodel" nsURI="http://www.example.org/containermodel"
+    nsPrefix="containermodel">
+  <eClassifiers xsi:type="ecore:EClass" name="Object">
+    <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="less" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+      <eParameters name="inclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="greater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+      <eParameters name="inclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="hashcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="satisfy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="apply" eType="#//Object">
+      <eParameters name="operator" eType="#//Object"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Collection" eSuperTypes="#//Object">
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="empty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="contains" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="iterator" eType="#//Iterator"/>
+    <eOperations name="toarray" eType="#//ArrayList"/>
+    <eOperations name="toarray" eType="#//ArrayList">
+      <eParameters name="a" eType="#//ArrayList"/>
+    </eOperations>
+    <eOperations name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="containsall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="removeall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="removeif" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="filter" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="retainall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="hashcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="spliterator" eType="#//Object"/>
+    <eOperations name="stream" eType="#//Object"/>
+    <eOperations name="parallelstream" eType="#//Object"/>
+    <eOperations name="change" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
+        eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractCollection" eSuperTypes="#//Collection">
+    <eOperations name="iterator" eType="#//Iterator"/>
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="empty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="contains" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="toarray" eType="#//ArrayList"/>
+    <eOperations name="toarray" eType="#//ArrayList">
+      <eParameters name="a" eType="#//ArrayList"/>
+    </eOperations>
+    <eOperations name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="containsall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="removeall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="retainall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="tostring" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Collection">
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="empty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="contains" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="iterator" eType="#//Iterator"/>
+    <eOperations name="toarray" eType="#//ArrayList"/>
+    <eOperations name="toarray" eType="#//ArrayList">
+      <eParameters name="a" eType="#//ArrayList"/>
+    </eOperations>
+    <eOperations name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="containsall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="removeall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="retainall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="replaceall">
+      <eParameters name="operator" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="sort">
+      <eParameters name="c" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="hashcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="get" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="set" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="add">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="indexof" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="lastindexof" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="listiterator" eType="#//ListIterator"/>
+    <eOperations name="listiterator" eType="#//ListIterator">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="sublist" eType="#//List">
+      <eParameters name="fromindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="toindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="spliterator" eType="#//Object"/>
+    <eOperations name="insert" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+      <eParameters name="i" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="replace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="i" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="indexof" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="pos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Set" eSuperTypes="#//Collection">
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="empty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="contains" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="iterator" eType="#//Iterator"/>
+    <eOperations name="toarray" eType="#//ArrayList"/>
+    <eOperations name="toarray" eType="#//ArrayList">
+      <eParameters name="a" eType="#//ArrayList"/>
+    </eOperations>
+    <eOperations name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="containsall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="retainall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="removeall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="hashcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="spliterator" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractList" eSuperTypes="#//AbstractCollection #//List">
+    <eOperations name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="get" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="set" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="add">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="indexof" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="lastindexof" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="iterator" eType="#//Iterator"/>
+    <eOperations name="listiterator" eType="#//ListIterator"/>
+    <eOperations name="listiterator" eType="#//ListIterator">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="sublist" eType="#//List">
+      <eParameters name="fromindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="toindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="hashcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="removerange">
+      <eParameters name="fromindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="toindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractSequentialList" eSuperTypes="#//AbstractList">
+    <eOperations name="get" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="set" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="add">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="iterator" eType="#//Iterator"/>
+    <eOperations name="listiterator" eType="#//ListIterator">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startelement" eType="#//Object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endelement" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayList" eSuperTypes="#//List #//AbstractList">
+    <eOperations name="trimtosize"/>
+    <eOperations name="ensurecapacity">
+      <eParameters name="mincapacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="empty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="contains" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="indexof" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="lastindexof" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="clone" eType="#//Object"/>
+    <eOperations name="toarray" eType="#//ArrayList"/>
+    <eOperations name="toarray" eType="#//ArrayList">
+      <eParameters name="a" eType="#//ArrayList"/>
+    </eOperations>
+    <eOperations name="get" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="set" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="add">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="removerange">
+      <eParameters name="fromindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="toindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="removeall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="retainall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="listiterator" eType="#//ListIterator">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="listiterator" eType="#//ListIterator"/>
+    <eOperations name="iterator" eType="#//Iterator"/>
+    <eOperations name="sublist" eType="#//List">
+      <eParameters name="fromindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="toindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="foreach">
+      <eParameters name="action" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="spliterator" eType="#//Object"/>
+    <eOperations name="removeif" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="filter" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="replaceall">
+      <eParameters name="operator" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="sort">
+      <eParameters name="c" eType="#//Object"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkedList" eSuperTypes="#//List #//AbstractSequentialList">
+    <eOperations name="getfirst" eType="#//Object"/>
+    <eOperations name="getlast" eType="#//Object"/>
+    <eOperations name="removefirst" eType="#//Object"/>
+    <eOperations name="removelast" eType="#//Object"/>
+    <eOperations name="addfirst">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="addlast">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="contains" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="get" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="set" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="add">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="#//Object">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="indexof" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="lastindexof" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="peek" eType="#//Object"/>
+    <eOperations name="element" eType="#//Object"/>
+    <eOperations name="poll" eType="#//Object"/>
+    <eOperations name="remove" eType="#//Object"/>
+    <eOperations name="offer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="offerfirst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="offerlast" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="peekfirst" eType="#//Object"/>
+    <eOperations name="peeklast" eType="#//Object"/>
+    <eOperations name="pollfirst" eType="#//Object"/>
+    <eOperations name="polllast" eType="#//Object"/>
+    <eOperations name="push">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="pop" eType="#//Object"/>
+    <eOperations name="removefirstoccurrence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="removelastoccurrence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="listiterator" eType="#//ListIterator">
+      <eParameters name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="descendingiterator" eType="#//Iterator"/>
+    <eOperations name="clone" eType="#//Object"/>
+    <eOperations name="toarray" eType="#//ArrayList"/>
+    <eOperations name="toarray" eType="#//ArrayList">
+      <eParameters name="a" eType="#//ArrayList"/>
+    </eOperations>
+    <eOperations name="spliterator" eType="#//Object"/>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="pos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Map" eSuperTypes="#//Object">
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="empty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="containskey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="containsvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="get" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="put" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="putall">
+      <eParameters name="m" eType="#//Map"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="keyset" eType="#//Set"/>
+    <eOperations name="values" eType="#//Collection"/>
+    <eOperations name="entryset" eType="#//Set"/>
+    <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="hashcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="getordefault" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="defaultvalue" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="foreach">
+      <eParameters name="action" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="replaceall">
+      <eParameters name="function" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="putifabsent" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="replace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="oldvalue" eType="#//Object"/>
+      <eParameters name="newvalue" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="replace" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="computeifabsent" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="mappingfunction" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="computeifpresent" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="remappingfunction" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="compute" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="remappingfunction" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="merge" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+      <eParameters name="remappingfunction" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="entry" eType="#//Entry">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="contains" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="entry" eType="#//Entry"/>
+    </eOperations>
+    <eOperations name="map" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="associate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="entry" eType="#//Entry"/>
+    </eOperations>
+    <eOperations name="copy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="entry" eType="#//Entry"/>
+    </eOperations>
+    <eOperations name="replace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="entry" eType="#//Entry"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="change" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="#//Entry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" upperBound="-1" eType="#//Object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+        eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractMap" eSuperTypes="#//Map">
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="empty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="containsvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="containskey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="get" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="put" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="putall">
+      <eParameters name="m" eType="#//Map"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="keyset" eType="#//Set"/>
+    <eOperations name="values" eType="#//Collection"/>
+    <eOperations name="entryset" eType="#//Set"/>
+    <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="hashcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="tostring" eType="#//Object"/>
+    <eOperations name="clone" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SortedMap" eSuperTypes="#//Map">
+    <eOperations name="comparator" eType="#//Object"/>
+    <eOperations name="submap" eType="#//SortedMap">
+      <eParameters name="fromkey" eType="#//Object"/>
+      <eParameters name="tokey" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="headmap" eType="#//SortedMap">
+      <eParameters name="tokey" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="tailmap" eType="#//SortedMap">
+      <eParameters name="fromkey" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="firstkey" eType="#//Object"/>
+    <eOperations name="lastkey" eType="#//Object"/>
+    <eOperations name="keyset" eType="#//Set"/>
+    <eOperations name="values" eType="#//Collection"/>
+    <eOperations name="entryset" eType="#//Set"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startkey" eType="#//Object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endkey" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NavigableMap" eSuperTypes="#//SortedMap">
+    <eOperations name="lowerentry" eType="#//Entry">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="lowerkey" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="floorentry" eType="#//Entry">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="floorkey" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="ceilingentry" eType="#//Entry">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="ceilingkey" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="higherentry" eType="#//Entry">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="higherkey" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="firstentry" eType="#//Entry"/>
+    <eOperations name="lastentry" eType="#//Entry"/>
+    <eOperations name="pollfirstentry" eType="#//Entry"/>
+    <eOperations name="polllastentry" eType="#//Entry"/>
+    <eOperations name="descendingmap" eType="#//NavigableMap"/>
+    <eOperations name="navigablekeyset" eType="#//NavigableSet"/>
+    <eOperations name="descendingkeyset" eType="#//NavigableSet"/>
+    <eOperations name="submap" eType="#//NavigableMap">
+      <eParameters name="fromkey" eType="#//Object"/>
+      <eParameters name="frominclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eParameters name="tokey" eType="#//Object"/>
+      <eParameters name="toinclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="headmap" eType="#//NavigableMap">
+      <eParameters name="tokey" eType="#//Object"/>
+      <eParameters name="inclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="tailmap" eType="#//NavigableMap">
+      <eParameters name="fromkey" eType="#//Object"/>
+      <eParameters name="inclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="submap" eType="#//SortedMap">
+      <eParameters name="fromkey" eType="#//Object"/>
+      <eParameters name="tokey" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="headmap" eType="#//SortedMap">
+      <eParameters name="tokey" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="tailmap" eType="#//SortedMap">
+      <eParameters name="fromkey" eType="#//Object"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entry" eSuperTypes="#//Object">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" lowerBound="1" eType="#//Object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Iterator">
+    <eOperations name="hasnext" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="next" eType="#//Object"/>
+    <eOperations name="remove"/>
+    <eOperations name="foreachremaining">
+      <eParameters name="action" eType="#//Object"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
+        eType="#//Object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="previous" upperBound="-1"
+        eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListIterator" eSuperTypes="#//Iterator">
+    <eOperations name="hasnext" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="next" eType="#//Object"/>
+    <eOperations name="hasprevious" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="previous" eType="#//Object"/>
+    <eOperations name="nextindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="previousindex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="remove"/>
+    <eOperations name="set">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="add">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractSet" eSuperTypes="#//Set #//AbstractCollection">
+    <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="hashcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="removeall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SortedSet" eSuperTypes="#//Set">
+    <eOperations name="comparator" eType="#//Object"/>
+    <eOperations name="subset" eType="#//SortedSet">
+      <eParameters name="fromelement" eType="#//Object"/>
+      <eParameters name="toelement" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="headset" eType="#//SortedSet">
+      <eParameters name="toelement" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="tailset" eType="#//SortedSet">
+      <eParameters name="fromelement" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="first" eType="#//Object"/>
+    <eOperations name="last" eType="#//Object"/>
+    <eOperations name="spliterator" eType="#//Object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startelement" eType="#//Object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endelement" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NavigableSet" eSuperTypes="#//SortedSet">
+    <eOperations name="lower" eType="#//Object">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="floor" eType="#//Object">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="ceiling" eType="#//Object">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="higher" eType="#//Object">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="pollfirst" eType="#//Object"/>
+    <eOperations name="polllast" eType="#//Object"/>
+    <eOperations name="iterator" eType="#//Iterator"/>
+    <eOperations name="descendingset" eType="#//NavigableSet"/>
+    <eOperations name="descendingiterator" eType="#//Iterator"/>
+    <eOperations name="subset" eType="#//NavigableSet">
+      <eParameters name="fromelement" eType="#//Object"/>
+      <eParameters name="frominclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eParameters name="toelement" eType="#//Object"/>
+      <eParameters name="toinclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="headset" eType="#//NavigableSet">
+      <eParameters name="toelement" eType="#//Object"/>
+      <eParameters name="inclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="tailset" eType="#//NavigableSet">
+      <eParameters name="fromelement" eType="#//Object"/>
+      <eParameters name="inclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="subset" eType="#//SortedSet">
+      <eParameters name="fromelement" eType="#//Object"/>
+      <eParameters name="toelement" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="headset" eType="#//SortedSet">
+      <eParameters name="toelement" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="tailset" eType="#//SortedSet">
+      <eParameters name="fromelement" eType="#//Object"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HashSet" eSuperTypes="#//AbstractSet">
+    <eOperations name="iterator" eType="#//Iterator"/>
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="empty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="contains" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="clone" eType="#//Object"/>
+    <eOperations name="spliterator" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TreeSet" eSuperTypes="#//AbstractSet #//SortedSet">
+    <eOperations name="iterator" eType="#//Iterator"/>
+    <eOperations name="descendingiterator" eType="#//Iterator"/>
+    <eOperations name="descendingset" eType="#//Set"/>
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="empty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="contains" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="o" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="addall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="c" eType="#//Collection"/>
+    </eOperations>
+    <eOperations name="subset" eType="#//Set">
+      <eParameters name="fromelement" eType="#//Object"/>
+      <eParameters name="frominclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eParameters name="toelement" eType="#//Object"/>
+      <eParameters name="toinclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="headset" eType="#//Set">
+      <eParameters name="toelement" eType="#//Object"/>
+      <eParameters name="inclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="tailset" eType="#//Set">
+      <eParameters name="fromelement" eType="#//Object"/>
+      <eParameters name="inclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="subset" eType="#//Set">
+      <eParameters name="fromelement" eType="#//Object"/>
+      <eParameters name="toelement" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="headset" eType="#//Set">
+      <eParameters name="toelement" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="tailset" eType="#//Set">
+      <eParameters name="fromelement" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="comparator" eType="#//Object"/>
+    <eOperations name="first" eType="#//Object"/>
+    <eOperations name="last" eType="#//Object"/>
+    <eOperations name="lower" eType="#//Object">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="floor" eType="#//Object">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="ceiling" eType="#//Object">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="higher" eType="#//Object">
+      <eParameters name="e" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="pollfirst" eType="#//Object"/>
+    <eOperations name="polllast" eType="#//Object"/>
+    <eOperations name="clone" eType="#//Object"/>
+    <eOperations name="spliterator" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HashMap" eSuperTypes="#//AbstractMap">
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="empty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="get" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="containskey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="put" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="putall">
+      <eParameters name="m" eType="#//Map"/>
+    </eOperations>
+    <eOperations name="remove" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="containsvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="keyset" eType="#//Set"/>
+    <eOperations name="values" eType="#//Collection"/>
+    <eOperations name="entryset" eType="#//Set"/>
+    <eOperations name="getordefault" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="defaultvalue" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="putifabsent" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="replace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="oldvalue" eType="#//Object"/>
+      <eParameters name="newvalue" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="replace" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="computeifabsent" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="mappingfunction" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="computeifpresent" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="remappingfunction" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="compute" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="remappingfunction" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="merge" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+      <eParameters name="remappingfunction" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="foreach">
+      <eParameters name="action" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="replaceall">
+      <eParameters name="function" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="clone" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TreeMap" eSuperTypes="#//AbstractMap #//NavigableMap">
+    <eOperations name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="containskey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="containsvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="get" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="comparator" eType="#//Object"/>
+    <eOperations name="firstkey" eType="#//Object"/>
+    <eOperations name="lastkey" eType="#//Object"/>
+    <eOperations name="putall">
+      <eParameters name="map" eType="#//Map"/>
+    </eOperations>
+    <eOperations name="put" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="remove" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eOperations name="clone" eType="#//Object"/>
+    <eOperations name="firstentry" eType="#//Entry"/>
+    <eOperations name="lastentry" eType="#//Entry"/>
+    <eOperations name="pollfirstentry" eType="#//Entry"/>
+    <eOperations name="polllastentry" eType="#//Entry"/>
+    <eOperations name="lowerentry" eType="#//Entry">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="lowerkey" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="floorentry" eType="#//Entry">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="floorkey" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="ceilingentry" eType="#//Entry">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="ceilingkey" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="higherentry" eType="#//Entry">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="higherkey" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="keyset" eType="#//Set"/>
+    <eOperations name="navigablekeyset" eType="#//Set"/>
+    <eOperations name="descendingkeyset" eType="#//Set"/>
+    <eOperations name="values" eType="#//Collection"/>
+    <eOperations name="entryset" eType="#//Set"/>
+    <eOperations name="descendingmap" eType="#//Map"/>
+    <eOperations name="submap" eType="#//Map">
+      <eParameters name="fromkey" eType="#//Object"/>
+      <eParameters name="frominclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eParameters name="tokey" eType="#//Object"/>
+      <eParameters name="toinclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="headmap" eType="#//Map">
+      <eParameters name="tokey" eType="#//Object"/>
+      <eParameters name="inclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="tailmap" eType="#//Map">
+      <eParameters name="fromkey" eType="#//Object"/>
+      <eParameters name="inclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="submap" eType="#//Map">
+      <eParameters name="fromkey" eType="#//Object"/>
+      <eParameters name="tokey" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="headmap" eType="#//Map">
+      <eParameters name="tokey" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="tailmap" eType="#//Map">
+      <eParameters name="fromkey" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="replace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="oldvalue" eType="#//Object"/>
+      <eParameters name="newvalue" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="replace" eType="#//Object">
+      <eParameters name="k" eType="#//Object"/>
+      <eParameters name="v" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="foreach">
+      <eParameters name="action" eType="#//Object"/>
+    </eOperations>
+    <eOperations name="replaceall">
+      <eParameters name="function" eType="#//Object"/>
+    </eOperations>
+  </eClassifiers>
+</ecore:EPackage>

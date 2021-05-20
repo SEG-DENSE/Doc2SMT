@@ -1,0 +1,257 @@
+{
+  "Object::oclAsType(OclType)": {
+    "single": "(= ?r ?p0)",
+    "type": "Object"
+  },
+  "Integer::oclAsType(OclType)":{
+    "single": "(= ?r ?p0)",
+    "type": "Object"
+  },
+  "Integer::=(OclAny)": {
+    "both": "(= ?r (= ?p0 ?p1))",
+    "type": "Bool"
+  },
+  "Integer::-()": {
+    "both": "(= ?r (- ?p0))",
+    "type": "Int"
+  },
+  "Object::=(OclAny)":{
+    "both": "(= ?r (= ?p0 ?p1))",
+    "type": "Bool"
+  },
+  "Object::equals(Object)" :{
+    "both": "(= ?r (= ?p0 ?p1))",
+    "type": "Bool"
+  },
+  "Map::equals(Object)" :{
+    "both": "(= ?r (and (= (key ?p0) (key ?p1)) (forall ((k!1 Int)) (=> (select (key ?p0) k!1) (and (= (select (mapping ?p0) k!1) (select (mapping ?p1) k!1)))))))",
+    "type": "Bool"
+  },
+  "OrderedSet(Object)::=(OrderedSet(T))": {
+    "both": "(= ?r (= ?p0 ?p1))",
+    "type": "Bool"
+  },
+  "Boolean::not()": {
+    "both": "(= ?r (not ?p0))",
+    "type": "Bool"
+  },
+  "Boolean::and(Boolean)": {
+    "both": "(= ?r (and ?p0 ?p1))",
+    "type": "Bool"
+  },
+  "Boolean::implies(Boolean)": {
+    "both": "(= ?r (=> ?p0 ?p1))",
+    "type": "Bool"
+  },
+  "Object::satisfy(Object)": {
+    "single": "(= ?r (?p1 ?p0))",
+    "type": "Bool"
+  },
+  "Object::apply(Object)": {
+    "single": "(= ?r (?p1 ?p0))",
+    "type": "Object"
+  },
+  "Object::greater(Object,EBoolean)": {
+    "single": "(= ?r (ite ?p2 (>= ?p0 ?p1) (> ?p0 ?p1)))",
+    "type": "Bool"
+  },
+  "Object::less(Object,EBoolean)": {
+    "single": "(= ?r (ite ?p2 (<= ?p0 ?p1) (< ?p0 ?p1)))",
+    "type": "Bool"
+  },
+  "Collection::element": {
+    "single": "(= ?r (mapping ?p0))",
+    "forAll": "(= ?r ?p0)",
+    "type": "Array ?T Bool",
+    "forAllType": "Set"
+  },
+  "Collection::change()": {
+    "both": "(= ?r (not (= (mapping ?p0) (mapping ?_p0))))",
+    "type": "Bool"
+  },
+  "Collection::size()": {
+    "single": "(= ?r (s!ze (mapping ?p0) max!nt))",
+    "type": "Int"
+  },
+  "Collection::empty()": {
+    "single": "(= ?r (= (s!ze (mapping ?p0) max!nt) 0))",
+    "type": "Bool"
+  },
+  "Collection::contains(Object)": {
+    "single": "(= ?r (select (mapping ?p0) ?p1))",
+    "forAll": "(= ?r (forall ((x ?T)) (=> (select (mapping ?p1) x) (select (mapping ?p0) x))))",
+    "type": "Bool"
+  },
+  "Collection::iterator()": {
+    "single": "(and (= (mapping ?r) (mapping ?p0)) (forall ((x ?T)) (not (select (previous ?r) x))))",
+    "type": "Iterator"
+  },
+  "Collection::add(Object)": {
+    "single": "(= ?r (= (mapping ?_p0) (store (mapping ?p0) ?p1 true)))",
+    "forAll": "(= ?r (= (mapping ?_p0) ((_ map or) (mapping ?p0) (mapping ?p1))))",
+    "type": "Bool"
+  },
+  "Collection::remove(Object)": {
+    "single": "(= ?r (= (mapping ?_p0) (store (mapping ?p0) ?p1 false)))",
+    "forAll": "(= ?r (= (mapping ?_p0) ((_ map and) (mapping ?p0) ((_ map not) (mapping ?p1)))))",
+    "type": "Bool"
+  },
+  "List::end":{
+    "both": "(= ?r (seq.len (element ?p0)))",
+    "type": "Int"
+  },
+  "List::start":{
+    "both": "(= ?r 0)",
+    "type": "Int"
+  },
+  "List::size()": {
+    "both": "(= ?r (seq.len (element ?p0)))",
+    "type": "Int"
+  },
+  "List::empty()": {
+    "single": "(= ?r (= (seq.len (element ?p0)) 0))",
+    "type": "Bool"
+  },
+  "List::contains(Object)": {
+    "single": "(= ?r (seq.contains (element ?p0) (seq.unit ?p1)))",
+    "forAll": "(= ?r (forall ((x ?T)) (=> (select (mapping ?p1) x) (select (mapping ?p0) x))))",
+    "type": "Bool"
+  },
+  "List::insert(Object,EInt)":{
+    "single": 
+    "(= ?r (and (>= ?p2 0) (<= ?p2 (seq.len (element ?p0))) (let ((size (seq.len (element ?p0)))) (= (element ?_p0) (seq.++ (seq.extract (element ?p0) 0 ?p2) (seq.unit ?p1) (seq.extract (element ?p0) ?p2 (- size ?p2)))))))",
+    "forAll":
+    "(= ?r (and (>= ?p2 0) (<= ?p2 (seq.len (element ?p0))) (let ((size (seq.len (element ?p0)))) (= (element ?_p0) (seq.++ (seq.extract (element ?p0) 0 ?p2) (m!e (mapping ?p1) max!nt) (seq.extract (element ?p0) ?p2 (- size ?p2)))))))",
+    "type": "Bool"
+  },
+  "List::remove(Object)":{
+    "single": 
+    "(= ?r (and (let ((size (seq.len (element ?p0))) (idx (seq.indexof (element ?p0) (seq.unit ?p1)))) (ite (= idx -1) (= (element ?_p0) (element ?p0)) (= (element ?_p0) (seq.++ (seq.extract (element ?p0) 0 idx) (seq.extract (element ?p0) (+ idx 1) (- (- size idx) 1))))))))",
+    "forAll":
+    "(= ?r (= (mapping ?_p0) ((_ map and) (mapping ?p0) ((_ map not) (mapping ?p1)))))",
+    "type": "Bool"
+  },
+  "List::get(EInt)":{
+    "both": "(= (seq.unit ?r) (seq.at (element ?p0) ?p1))",
+    "type": "Object"
+  },
+  "List::replace(Object,Object)":{
+    "single": 
+    "(= ?r (let ((size (seq.len (element ?p0))) (idx (seq.indexof (element ?p0) (seq.unit ?p1)))) (and (= (element ?_p0) (seq.++ (seq.extract (element ?p0) 0 idx) (seq.unit ?p2) (seq.extract (element ?p0) (+ idx 1) (- (- size idx) 1)))) (ite (seq.contains (element ?_p0) (seq.unit ?p1)) (= (mapping ?_p0) (store (mapping ?p0) ?p2 true)) (= (mapping ?_p0) (store (store (mapping ?p0) ?p2 true) ?p1 false))))))",
+    "type": "Object"
+  },
+  "List::indexof(EInt,Object)":{
+    "both":
+    "(ite (= ?p1 0) (= ?r (seq.indexof (element ?p0) (seq.unit ?p2))) (and (= ?r (seq.indexof (element ?p0) (seq.unit ?p2) ?r)) (= -1 (seq.indexof (element ?p0) (seq.unit ?p2) (+ ?r 1)))))",
+    "type": "Int"
+  },
+  "List::change()": {
+    "both": "(= ?r (not (= (element ?p0) (element ?_p0))))",
+    "type": "Bool"
+  },
+  "List::remove(EInt)":{
+    "both":
+    "(and (>= ?p1 0) (<= ?p1 (seq.len (element ?p0))) (= (seq.unit ?r) (seq.at (element ?p0) ?p1)) (= (element ?_p0) (seq.++ (seq.extract (element ?p0) 0 ?p1) (seq.extract (element ?p0) (+ ?p1 1) (- (- (seq.len (element ?p0)) ?p1) 1)))))",
+    "type": "Object"
+  },
+  "List::replace(EInt,Object)":{
+    "both":
+    "(= ?r (and (>= ?p1 0) (<= ?p1 (seq.len (element ?p0))) (= (element ?_p0) (seq.++ (seq.extract (element ?p0) 0 ?p1) (seq.unit ?p2) (seq.extract (element ?p0) (+ ?p1 1) (- (- (seq.len (element ?p0)) ?p1) 1))))))",
+    "type": "Bool"
+  },
+  "List::iterator()": {
+    "single": "(and (= (mapping ?r) (element ?p0)) (forall ((x ?T)) (not (select (previous ?r) x))))",
+    "type": "Iterator"
+  },
+  "AbstractSequentialList::startelement": {
+    "both": "(ite (= (seq.len (element ?p0)) 0) (= ?r (+ max!nt 1)) (= (seq.unit ?r) (seq.at (element ?p0) 0)))",
+    "type": "Int"
+  },
+  "AbstractSequentialList::endelement": {
+    "both": "(ite (= (seq.len (element ?p0)) 0) (= ?r (+ max!nt 1)) (= (seq.unit ?r) (seq.at (element ?p0) (- (seq.len (element ?p0)) 1))))",
+    "type": "Int"
+  },
+  "SortedSet::startelement": {
+    "single": "(ite (= (s!ze (mapping ?p0) max!nt) 0) (= ?r (+ max!nt 1)) (and (select (mapping ?p0) ?r) (forall ((x ?T)) (=> (select (mapping ?p0) x) (<= ?r x)))))",
+    "type": "Object"
+  },
+  "SortedSet::endelement": {
+    "single": "(ite (= (s!ze (mapping ?p0) max!nt) 0) (= ?r (+ max!nt 1)) (and (select (mapping ?p0) ?r) (forall ((x ?T)) (=> (select (mapping ?p0) x) (>= ?r x)))))",
+    "type": "Object"
+  },
+  "Sequence(Integer)::max()": {
+    "single": "(ite (= (s!ze (mapping ?p0) max!nt) 0) (= ?r (+ max!nt 1)) (and (select (mapping ?p0) ?r) (forall ((x ?T)) (=> (select (mapping ?p0) x) (>= ?r x)))))",
+    "type": "Int"
+  },
+  "Sequence(Integer)::min()": {
+    "single": "(ite (= (s!ze (mapping ?p0) max!nt) 0) (= ?r (+ max!nt 1)) (and (select (mapping ?p0) ?r) (forall ((x ?T)) (=> (select (mapping ?p0) x) (<= ?r x)))))",
+    "type": "Int"
+  },
+  "Map::entry": {
+    "single": "(forall ((x ?K)(y ?V)) (ite (and (select (key ?p0) x) (= y (select (mapping ?p0) x))) (select ?r ((as mk-entry (Entry ?K ?V)) x y)) (not (select ?r ((as mk-entry (Entry ?K ?V)) x y)))))",
+//    "single": "(forall ((x ?K)(y ?V)) (ite (and (select (key ?p0) x) (= y (select (mapping ?p0) x))) (select ?r (mk-entry x y)) (not (select ?r (mk-entry x y)))))",
+    "forAll": "(= ?r ?p0)",
+    "type": "Array (Entry ?K ?V) Bool",
+    "forAllType": "Map"
+  },
+  "Map::key": {
+    "both": "(= ?r (key ?p0))",
+    "type": "Array ?T Bool"
+  },
+  "Map::value": {
+    "both": "(forall ((y ?V)) (ite (exists ((x ?K)) (and (select (key ?p0) x) (= y (select (mapping ?p0) x)))) (select ?r y) (not (select ?r y))))",
+    "type": "Array ?T Bool"
+  },
+  "Map::size()": {
+    "single": "(= ?r (s!ze (key ?p0) max!nt))",
+    "type": "Int"
+  },
+  "Map::empty()": {
+    "single": "(= ?r (= (s!ze (key ?p0) max!nt) 0))",
+    "type": "Bool"
+  },
+  "Map::entry(Object)": {
+    "both": "(= ?r ((as mk-entry (Entry ?K ?V)) ?p1 (select (mapping ?p0) ?p1)))",
+//    "both": "(= ?r (mk-entry ?p1 (select (mapping ?p0) ?p1)))",
+    "type": "Entry"
+  },
+  "Map::contains(Entry)": {
+    "single": "(= ?r (and (select (key ?p0) (key ?p1)) (= (select (mapping ?p0) (key ?p1)) (value ?p1))))",
+    "forAll": "(= ?r (forall ((x ?K)) (=> (select (key ?p1) x) (and (select (key ?p0) x) (= (select (mapping ?p1) x) (select (mapping ?p0) x))))))",
+    "type": "Bool"
+  },
+  "Map::map(Object,Object)": {
+    "single": "(= ?r (and (select (key ?p0) ?p1) (= (select (mapping ?p0) ?p1) ?p2)))",
+    "type": "Bool"
+  },
+  "Map::associate(Object,Object)": {
+    "single": "(= ?r (and (= (key ?_p0) (store (key ?p0) ?p1 true)) (= (mapping ?_p0) (store (mapping ?p0) ?p1 ?p2))))",
+    "type": "Bool"
+  },
+  "Map::remove(Entry)": {
+    "single": "(= ?r (and (= (key ?_p0) (store (key ?p0) (key ?p1) false)) (= (mapping ?_p0) (store (mapping ?p0) (key ?p1) (+ max!nt 1)))))",
+    "forAll": "(= ?r (= (key ?_p0) ((_ map and) (key ?p0) ((_ map not) (key ?p1)))))",
+    "type": "Bool"
+  },
+  "Map::copy(Entry)": {
+    "single": "(= ?r (and (= (key ?_p0) (store (key ?p0) (key ?p1) true)) (= (mapping ?_p0) (store (mapping ?p0) (key ?p1) (value ?p1)))))",
+    "forAll": "(= ?r (and (= (key ?_p0) ((_ map or) (key ?p0) (key ?p1))) (forall ((x ?K)) (ite (select (key ?p1) x) (= (select (mapping ?_p0) x) (select (mapping ?p1) x)) (= (select (mapping ?_p0) x) (select (mapping ?p0) x))))))",
+    "type": "Bool"
+  },
+  "Map::replace(Entry,Object)": {
+    "single": "(= ?r (and (= (key ?_p0) (key ?p0)) (= (mapping ?_p0) (store (mapping ?p0) (key ?p1) ?p2))))",
+    "type": "Bool"
+  },
+  "Map::change()": {
+    "both": "(= ?r (or (not (= (key ?p0) (key ?_p0))) (not (= (mapping ?p0) (mapping ?_p0)))))",
+    "type": "Bool"
+  },
+  "SortedMap::startkey": {
+    "single": "(ite (= (s!ze (key ?p0) max!nt) 0) (= ?r (+ max!nt 1)) (and (select (key ?p0) ?r) (forall ((x ?T)) (=> (select (key ?p0) x) (<= ?r x)))))",
+    "type": "Object"
+  },
+  "SortedMap::endkey": {
+    "single": "(ite (= (s!ze (key ?p0) max!nt) 0) (= ?r (+ max!nt 1)) (and (select (key ?p0) ?r) (forall ((x ?T)) (=> (select (key ?p0) x) (>= ?r x)))))",
+    "type": "Object"
+  }
+}
