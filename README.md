@@ -22,7 +22,7 @@ Doc2SMT employs [Z3 prover](https://github.com/Z3Prover/z3) to check candidate c
 
 ## Download Doc2smt release version
 
-Download [a release version](https://github.com/doc2smt/doc2smt/releases/download/v1.0/doc2smt-tool.tar.gz) of Doc2smt on the release page and extract it.
+Download [a release version](https://github.com/SEG-DENSE/Doc2SMT/releases/download/v1.0/doc2smt-tool.tar.gz) of Doc2smt on the release page and extract it.
 
 ## Get started
 
