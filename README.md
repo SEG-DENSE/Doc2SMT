@@ -1,16 +1,10 @@
 # Doc2SMT
 
-Doc2SMT generating strong functional constraints for library methods based on their documentations. 
-
-It employs a set of general rules to translate descriptions of method functionalities into a large number of candidate OCL expressions. 
-
-A novel two-step validation is then introduced to find out the constraints that comply with the behaviours of the method: 
-- In static validation, a domain model that can be manually enhanced incrementally is used to filter out OCL expressions that do not "fit" the problem domain
-- Dynamic validation checks whether a candidate constraint rightly abstracts the method under consideration through testing
+Doc2SMT generates strong functional constraints in SMT for library methods based on their documentations. 
 
 # How to use it
 
-This repository contains an executable jar file of Doc2SMT under the *tool* folder. To see how Doc2SMT works you need to check out the following steps:
+This repository contains an executable jar file of Doc2SMT under the *tool* folder. To see how Doc2SMT works, you need to check out the following steps:
 
 ## Java version
 
